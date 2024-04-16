@@ -9,9 +9,9 @@ app.use(cors())
 app.use(express.json());
 app.use(bodyParser.json());
 
-app.use(express.static(path.join('../dist')));
+app.use(express.static('../dist'));
 app.get('*', (req, res) => { 
-  res.sendFile(path.join('../dist/index.html')) 
+  res.sendFile('../dist/index.html') 
 });
 
 
