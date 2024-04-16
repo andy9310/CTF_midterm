@@ -110,6 +110,7 @@ app.post('/register_server/api/cleanhistory/',(req, res)=>{
 
 app.listen(process.env.PORT || 3001 , ()=>{
     console.log('ok, server is running on port');
+    console.log(process.env.PORT);
 })
 
 

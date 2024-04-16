@@ -12,7 +12,7 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/register_server/api/set_account/', {
+      const response = await axios.post('https://ctfmidterm-21d491f65c05.herokuapp.com/register_server/api/set_account/', {
         email:email,
         password:password,
         image:image,
