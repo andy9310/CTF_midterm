@@ -106,14 +106,6 @@ app.post('/register_server/api/cleanhistory/',(req, res)=>{
     return res.json("success");
 })
 
-
-
-app.listen(process.env.PORT || 3001 , ()=>{
-    console.log('ok, server is running on port');
-    console.log(process.env.PORT);
-})
-
-
 const db = mysql.createConnection({
     host: "us-cluster-east-01.k8s.cleardb.net",
     user: "badfd6324aa06d",
@@ -121,7 +113,19 @@ const db = mysql.createConnection({
     database: "heroku_caf4733b11b3e25",
     // port: 3306,
 });
-// db.query("CREATE TABLE login(email varchar(255), password varchar(255), avatar LONGBLOB)", function (err, result) {
-//     if (err) throw err;
-//     console.log("Database created");
-// });
+
+app.listen(process.env.PORT || 3001 , ()=>{
+    console.log('ok, server is running on port');
+    console.log(process.env.PORT);
+    db.query("CREATE TABLE login(email varchar(255), password varchar(255), avatar LONGTEXT, user_id INT AUTO_INCREMENT)", function (err, result) {
+        if (err) throw err;
+        console.log("login table created");
+    });
+    db.query("CREATE TABLE message(msg TEXT, user_id INT, message_id INT AUTO_INCREMENT )", function (err, result) {
+        if (err) throw err;
+        console.log("message table created");
+    });
+})
+
+
+
