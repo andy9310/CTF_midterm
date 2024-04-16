@@ -7,10 +7,12 @@
   "scripts": {
     "back:start": "nodemon ./backend/index.js",
     "front:start": "vite --host=0.0.0.0 --port 5000",
+    "build":"vite build",
     "front:build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "yarn front:start"
+    "start": "yarn back:start",
+    "heroku-postbuild": "yarn front:build"
   },
   "dependencies": {
     "axios": "^1.6.8",
