@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '../dist')));
-app.get('/', (req, res) => { 
+app.get('*', (req, res) => { 
   res.sendFile(path.join(__dirname + '../dist/index.html')) 
 });
 
@@ -59,7 +59,7 @@ app.post('/register_server/api/chathistory/',(req, res)=>{
     });
 })
 
-app.get('/register_server/api/chathistory/',(req, res)=>{
+app.post('/register_server/api/getchathistory/',(req, res)=>{
     db.query(`SELECT * FROM message;`, function (err, result) {
         if(result.length === 0){
             return res.send(["no message now"]);
