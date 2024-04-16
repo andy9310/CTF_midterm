@@ -17,7 +17,7 @@ function ChatRoom() {
     if(userid === 10000){
         navigate('/login');
     }
-    await axios.post('https://ctfmidterm-21d491f65c05.herokuapp.com/register_server/api/chathistory/', {
+    await axios.post('https://ctfmidterm-21d491f65c05.herokuapp.com/register_server/api/getchathistory/', {
       fetch,
     })
         .then(response => {
