@@ -115,11 +115,11 @@ app.listen(process.env.PORT || 3001 , ()=>{
 
 
 const db = mysql.createConnection({
-    host: "0.0.0.0",
-    user: "root",
-    password: "Andy9310",
-    database: "LoginInformation",
-    port: 3306,
+    host: "us-cluster-east-01.k8s.cleardb.net",
+    user: "badfd6324aa06d",
+    password: "d07610ba",
+    database: "heroku_caf4733b11b3e25",
+    // port: 3306,
 });
 // db.query("CREATE TABLE login(email varchar(255), password varchar(255), avatar LONGBLOB)", function (err, result) {
 //     if (err) throw err;
