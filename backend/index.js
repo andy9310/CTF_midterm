@@ -117,11 +117,11 @@ const db = mysql.createConnection({
 app.listen(process.env.PORT || 3001 , ()=>{
     console.log('ok, server is running on port');
     console.log(process.env.PORT);
-    db.query("CREATE TABLE login(email varchar(255), password varchar(255), avatar LONGTEXT, user_id INT AUTO_INCREMENT)", function (err, result) {
+    db.query("CREATE TABLE login(email varchar(255), password varchar(255), avatar LONGTEXT, user_id INT AUTO_INCREMENT, PRIMARY KEY (user_id))", function (err, result) {
         if (err) throw err;
         console.log("login table created");
     });
-    db.query("CREATE TABLE message(msg TEXT, user_id INT, message_id INT AUTO_INCREMENT )", function (err, result) {
+    db.query("CREATE TABLE message(msg TEXT, user_id INT, message_id INT AUTO_INCREMENT , PRIMARY KEY (message_id))", function (err, result) {
         if (err) throw err;
         console.log("message table created");
     });
