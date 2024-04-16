@@ -13,11 +13,11 @@ function ChatRoom() {
   const { userid } = useContext(SampleContext);
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(async()=>{
     if(userid === 10000){
         navigate('/login');
     }
-    axios.get('https://ctfmidterm-21d491f65c05.herokuapp.com/register_server/api/chathistory/')
+    await axios.get('https://ctfmidterm-21d491f65c05.herokuapp.com/register_server/api/chathistory/')
         .then(response => {
             console.log(response.data);
             console.log("get history process"); 
