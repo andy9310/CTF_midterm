@@ -102,13 +102,13 @@ app.post('/register_server/api/cleanhistory/',(req, res)=>{
 
 
 
-app.listen(3001 , ()=>{
-    console.log('ok, server is running on port 3001');
+app.listen(process.env.PORT || 3001 , ()=>{
+    console.log('ok, server is running on port');
 })
 
 
 const db = mysql.createConnection({
-    host: "127.0.0.1",
+    host: "0.0.0.0",
     user: "root",
     password: "Andy9310",
     database: "LoginInformation",
