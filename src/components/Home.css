@@ -1,0 +1,24 @@
+.home-page-boarder{
+    position: fixed;
+    top: 200px;
+    right: 750px;
+    height: 400px;
+    width: 400px;
+    border-radius: 2%;
+    background-color: blueviolet;
+}
+.home-page-boarder h1{
+    font-size: medium;
+}
+.home-page-boarder img{
+    height: 200px;
+    width: 300px;
+}
+.home-page-button-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.home-page-button-container button{
+    width: 100px;
+}

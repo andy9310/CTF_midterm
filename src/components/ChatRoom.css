@@ -1,0 +1,80 @@
+.chatroom{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 800px;
+    width: 800px;
+    border: solid;
+    border-color: aqua;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.messages{
+    font-size: 1rem;
+    position: relative;
+    height: 600px;
+    overflow-y: auto; 
+}
+.messages .cardBody {
+    display: flex;
+    margin: 1rem 0;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+}
+.message-box {
+    flex: 0 1;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    height: fit-content;
+}
+.message-box .message-input {
+    background: none;
+    border: solid;
+    border-color: black ;
+    outline: none !important;
+    resize: none;
+    color: rgba(8, 8, 8, 0.938);
+    font-size: 20px;
+    height: fit-content;
+    margin: 0;
+    padding-right: 20px;
+    width: 600px;
+}
+.message-box textarea:focus:-webkit-placeholder {
+    color: transparent;
+}
+.message-box .message-submit {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    border: none;
+    background: #64746b;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 6px 10px;
+    border-radius: 10px;
+    outline: none !important;
+    transition: background 0.2s ease;
+}
+
+.avatar-chat{
+    top: 30px;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, 0.24);
+}
+.avatar-chat img {
+    width: 100%;
+    height: auto;
+}
