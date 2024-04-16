@@ -6,7 +6,7 @@
   "proxy": "http://localhost:3001",
   "scripts": {
     "back:start": "nodemon ./backend/index.js",
-    "front:start": "vite --port 5000",
+    "front:start": "vite --host 0.0.0.0 --port 5000",
     "front:build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
