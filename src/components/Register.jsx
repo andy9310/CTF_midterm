@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import './Register.css';
 import { useNavigate } from 'react-router-dom';
-
+import robot from "../assets/register_robot.jpeg"
 function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -45,20 +45,14 @@ function Register() {
   }
   return (
     <div className='register-board'>
+      <img className='robot-img' src={robot}></img>
       <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-        </label>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-        </label>
-        <label>
-          avatar:
+        <input className='email-block' placeholder="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+        <input className='password-block' placeholder="password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+        <div>
+          <h3>頭像上傳(請勿超過25mb)</h3>
           <input type="file" onChange={e =>  getBase64(e.target.files[0]) } />
-          {/* <img className='avatar-exhibit' src={image}></img> */}
-        </label>
+        </div>
         <button className='register-button' type="submit">Register</button>
       </form>
     </div>

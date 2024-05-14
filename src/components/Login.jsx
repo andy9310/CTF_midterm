@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { SampleContext } from '../contexts/SampleContext';
-
+import cat from "../assets/cat2.jpeg"
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,15 +32,10 @@ function Login() {
 
   return (
     <div className='login-board'>
+      <img className='cat-img' src={cat}></img>
       <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-        </label>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-        </label>
+          <input className='email-block' placeholder="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+          <input className='password-block' placeholder="password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
         <button type="submit" className='login-button'>Login</button>
         <button type="submit" className='login-button' onClick={()=>{navigate('/');}}>home page</button>
       </form>
